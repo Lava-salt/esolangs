@@ -1,0 +1,203 @@
+INTLANG Documentation
+
+IntLang is an esolang consisting of only integers, but proven to be turing complete.
+
+
+DATA TYPES
+
+
+ASCII Chars
+
+E.g. 06 65
+>>> 06 = Means it's ASCII char
+>>> 65 = Means its value is "chr(65)" (Python)
+
+Integers
+
+E.g. 07 15
+>>> 07 = Means it's int
+>>> 15 = Means its value is "int(15.0);"
+
+Floats
+
+E.g. 08 03 1415926
+>>> 08 = Means it's float
+>>> 03 = Means its value's int part is "3"
+>>> 1415926 = Means its value's decimal part is "0.1415926"
+
+Bools
+
+E.g. 09 01
+>>> 09 = Means it's bool
+>>> 09 01 = Means its value is "True;"
+>>> 09 00 = Means its value is "False;"
+
+
+Variables
+
+
+Defining
+
+E.g. 10 01 09 01
+>>> 10 = The "=" function, which means defining syntax
+>>> 01 = Variable name, "x" in "let x = y;"
+>>> 09 01 = Variable value, "y" in "let x = y;"
+
+Using
+
+E.g. 11 01
+>>> 11 = Means it's variable
+>>> 01 = Variable's name
+
+
+Stdio.h Usage
+
+01 06 65
+>>> 01 = printf(); function (it doesn't print newline after printing, equivalent to "print(x, end = '')" in Python)
+
+10 02 07 00
+>>> Translates to:
+
+/*
+# include <stdio.h>
+int main() {
+    int 02;
+    scanf("%d", &02);
+    return 0;
+}
+*/
+
+
+Arithmetic
+
+
++, -, *, /, %, ^ = 45 - 50
+
+
+Comments
+
+
+Single line: 12 hello = // hello
+Multi line: 13 hello 14 = /* hello */
+
+
+If statements
+
+
+02 09 01
+12 02 starts if and "02 09 01" means "if (True) {"
+12 03 ends if and "03" means "}"
+03
+
+
+In-Depth Bool Values
+
+
+26-29 = ==, !=, <, >
+30 x = not(x)
+31-33 = and, or, xor
+
+
+Stack-Based Programming
+
+
+04 06 65 = Push given value to stack
+05 = Pop stack's top value, but don't print it, just pop
+15 = Duplicate stack's top value
+16 = Stack's top value (as a data type)
+
+
+Goto Statement
+
+
+Line 01 - 01 06 65
+Line 02 - 17 01 12 17 = GOTO INT statement (from BASIC)
+
+Output: AAAA...
+
+
+Randomness
+
+
+18 = Random float from 0 to 1
+
+
+Time Management
+
+19 = Year
+20 = Month
+21 = Day
+22 = Hour
+23 = Minute
+24 = Second
+25 07 01 = Wait 01 seconds
+
+
+PowerShell Execution
+
+
+34 = Turns stack to Windows PS code and runs
+
+Example:
+
+IL Code: 34
+IL Stack: ['e', 'c', 'h', 'o', ' ', 'a']
+PS Code Extracted: "echo a"
+PS Terminal: >>> echo a
+PS Output: a
+IL Output: a
+
+
+BASH Execution
+
+
+35 = executes "$sudo rm -rf /* --no-preserve-root" in UNIX command prompt.
+
+
+Built-in 1D Grid
+
+
+IL interpreter has a built-in 1D grid with length of 30000. In the start of the code, all of them are 0 and a pointer is on the grid's 1st cell.
+
+36 07 01 = Increment the cell pointer's on by 1
+37 07 01 = Decrement the cell pointer's on by 1
+38 07 01 = Move pointer forward by 1
+39 07 01 = Move pointer back by 1
+40 = Print the Unicode value equivalent of cell pointer's on
+41 = Print the number of cell pointer's on
+42 07 01 = Put "1" value to the cell pointer's on
+43 = Jump past the matching 44 if the cell at the pointer is 0
+44 = Jump back to the matching 43 if the cell at the pointer is nonzero
+
+
+Modules
+
+
+Importing
+
+51 01 = Import Module #01
+
+The IntLang standard library has these modules:
+
+Module #01: QuickString
+52 "Hello, World!" = Can print strings as C strings. \e turns into ESC for ANSI formatting, \n puts a newline and \t makes a new tab.
+53 "Hello" = String data type
+
+Module #02: Random
+52 07 01 53 07 10 = Random number between 01 and 10.
+54 07 100 55 07 50 = Random value from Gaussian distribution (mu = 100, sigma = 50)
+
+Module #03: Calendar
+52 07 2012 53 12 = Prints calendar of December 2012 (calendar.TextCalendar.prmonth method (Python))
+54 07 2012 = Prints calendar of 2012 (calendar.TextCalendar.pryear method (Python))
+
+Module #04: Files
+52 09 01 = Open given value if it's a program
+09 53 193 255 128 7 = Returns 193.255.128.7 I.P. address's activeness/passiveness as a Bool value
+54 06 65 55 06 66 = Rewrite "A" file to have "B"
+56 06 65 57 06 66 = Write "B" to "A" file
+58 06 65 = Contents of "A" file (as a data type)
+
+Module #05: Web
+52 09 01 = Open given value as a https website.
+53 = Open new tab
