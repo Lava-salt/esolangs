@@ -1,0 +1,73 @@
+Cython Documentation
+
+I made a mixture of C and Python for fun.
+Cython is an esoteric programming language I made.
+It's C in Python Style.
+
+/* Normal Cython code */
+#include stdio.h // Import the "stdio.h" module (standard input/output)
+int main(): // Start Process
+    print("Hello Cython! \n") // Print "Hello, Cython!" text
+    // "\n" text means go 1 line down, just like what "enter" button does.
+    return(0) // Say that execution successfully compiled
+
+/* Cython Calculator */
+#include stdio.h
+int main():
+    int n1, n2, sum, prompt // Make 4 variables as integers exist
+    print("Welcome to the Calculator!")
+    while 1 == 1: // Start a loop using "while" that'll last forever
+        print("\n1 = Addition\n2 = Subtraction\n3 = Multiplication")
+        print("\n4 = Division\n5 = Modulo\n")
+        scan("%d", &prompt) // Input and define "prompt" variable
+        print("Number 1: ")
+        scan("%d", &n1) // Get number 1
+        print("Number 2: ")
+        scan("%d", &n2) // Get number 2
+        if prompt == 1: // Do this if prompt is 1 (addition)
+            sum = n1 + n2 // Add
+        if prompt == 2:
+            sum = n1 - n2
+        if prompt == 3:
+            sum = n1 * n2
+        if prompt == 4:
+            sum = n1 / n2
+        if prompt == 5:
+            sum = n1 % n2
+        // Do the operation
+        print("\nOperation Result: %d", sum) // Print result
+    return(0)
+
+Here's the same in C for comparison:
+
+#include <stdio.h>
+int main() {
+    int n1, n2, sum, prompt;
+    printf("Welcome to the Calculator!");
+    while (1 == 1) {
+        printf("\n1 = Addition\n2 = Subtraction\n3 = Multiplication");
+        printf("\n4 = Division\n5 = Modulo\n");
+        scanf("%d", &prompt);
+        printf("Number 1: ");
+        scanf("%d", &n1);
+        printf("Number 2: ");
+        scanf("%d", &n2);
+        if (prompt == 1) {
+            sum = n1 + n2;
+        }
+        if (prompt == 2) {
+            sum = n1 - n2;
+        }
+        if (prompt == 3) {
+            sum = n1 * n2;
+        }
+        if (prompt == 4) {
+            sum = n1 / n2;
+        }
+        if (prompt == 5) {
+            sum = n1 % n2;
+        }
+        printf("\nOperation Result: %d\n", sum);
+    }
+    return 0;
+}
