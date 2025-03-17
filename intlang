@@ -193,7 +193,7 @@ Module #03: Calendar
 
 Module #04: Files
 52 09 01 = Open given value if it's a program
-09 53 193 255 128 7 = Returns 193.255.128.7 I.P. address's activeness/passiveness as a Bool value
+09 53 000 000 000 000 = Returns 000.000.000.000 I.P. address's activeness/passiveness as a Bool value
 54 06 65 55 06 66 = Rewrite "A" file to have "B"
 56 06 65 57 06 66 = Write "B" to "A" file
 58 06 65 = Contents of "A" file (as a data type)
