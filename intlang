@@ -111,7 +111,7 @@ Goto Statement
 
 
 Line 01 - 01 06 65
-Line 02 - 17 01 12 17 = GOTO INT statement (from BASIC)
+Line 02 - 17 07 01 12 17 = GOTO INT statement (from BASIC)
 
 Output: AAAA...
 
@@ -201,3 +201,61 @@ Module #04: Files
 Module #05: Web
 52 09 01 = Open given value as a https website.
 53 = Open new tab
+
+Module #06: Classes
+This is an example IntLang OOP code:
+51 06
+52 01
+53 55
+01 06 65
+54 55
+01 06 65
+10 01 56 01
+And its Python translation:
+Class "52" 01: "01"
+    def __init__"53"(self "55"):
+        print("A") "01 06 65"
+    def 54"54"(self "55"):
+        print("A") "01 06 65"
+01 "10 01" = 01() "56 01"
+
+Module #07: Statements
+52 09 01 12 translates to "while (True) {"
+01 06 65 12 middle of while loop
+53 12 end while ("}")
+54 01 10 12 translates to "for (int i = 1; i >= 10; i++) {"
+01 06 65 12 middle of for loop
+55 12 end for loop ("}")
+
+Module #08: Function
+52 01 11 02 12 52 = define, 01 = function name, 11 02 = variable used in function's defining
+54 11 02 47 07 02 12 54 = return, 11 02 47 07 02 = multiply variable by 2
+53 12 53 = end function
+10 01 07 00 12 get user input as integer
+10 02 52 11 01 12 store var #01 multiplied by 2 to var #02
+01 11 02 12 print var #02
+12 This is a working double of int finder program.
+
+
+Example codes
+
+
+12 Hello World Program
+51 01
+01 53 "Hello, World!"
+
+12 Looping Counter
+10 01 07 0
+01 11 01 12 Line 3
+10 01 11 01 45 07 01
+17 07 03
+
+12 Truth Machine
+10 01 07 00
+02 11 01 26 07 0
+01 07 0
+03
+02 11 01 56 07 1
+01 07 1 12 Line 7
+17 07 07
+03
