@@ -1,0 +1,37 @@
+I made my Turing Complete modified version of HQ9+ esolang.
+C Copies input to output.
+H Prints "Hello, world!"
+I Interprets input as program source.
+Q Prints the program source code.
+R Encrypts input with ROT-13.
+S Sorts input lines randomly given from 1 to 10.
+9 Prints the lyrics to "99 Bottles of Beer on the Wall."
++ Increments the accumulator.
+- Decrements the accumulator.
+* Doubles the accumulator.
+/ Divides the accumulator by 3.
+% Modulos the accumulator by n%2.
+x Redefines the accumulator to its square.
+X Redefines the accumulator to its cube.
+& The / operation but int instead of float
+A Print the accumulator
+F Prints FizzBuzz up to 100.
+- Deferences a null pointer if preceded by an F.
+$ Push the accumulator to the stack
+# Pop a value from the stack and print it
+^ Pop a value from the stack and print its ASCII value
+= Print new line (\n in C++)
+/ Get input from user and turn accumulator to it
+P Get input from user and push string to stack
+> Pop a value from the stack execute it in Python
+< Pop a value from the stack evaluate it in Python
+½ Pop a value from the stack and execute it in Batch
+\ Get input from user and turn accumulator to its Unicode value
+@ Repeat code after this 2 times.
+€ Repeat code after this 3 times.
+é Repeat code after this infinitely.
+0 Turns accumulator to binary
+2 Prints 2 and 3 timetable (used for looping and multiplying/dividing in HQ9+)
+G LGBTQ+ approved HQ9+ H
+: Push accumulator's Unicode value to stack
+; Append accumulator's Unicode value to stack's top value
