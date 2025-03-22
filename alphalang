@@ -1,0 +1,16 @@
+AlphaLang is an esolang where every word is a syntax.
+AlphaLang syntax is separated by spaces, and turns letters to integers.
+E.g. syntax "abc" is "123" if translated to their numbers in alphabet.
+1+2+3=6 so "abc" = 6 in AlphaLang. Each word corresponds to a function.
+It's found according to their AlphaLang integer. Its memory system is a 1D grid.
+It also has a pointer.
+1 - 10	 Move the pointer to the right
+11 - 20	 Move the pointer to the left
+21 - 30	 Increment the memory cell at the pointer
+31 - 40	 Decrement the memory cell at the pointer
+41 - 50	 Output the Unicode value of the cell at the pointer
+51 - 60  Output the value of the cell at the pointer
+61 - 70	 Input a character and store it in the cell at the pointer
+71 - 80  Input a number and store it in the cell at the pointer
+81 - 90	 Jump past the matching ] if the cell at the pointer is 0
+91 - 100 Jump back to the matching [ if the cell at the pointer is nonzero
