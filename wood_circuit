@@ -1,0 +1,176 @@
+Non-Electrical Wood Circuit Studies
+
+All the circuits that are made consists of wires, making electricity travel to another place, and opening or closing
+lightbulbs that then can be translated to data (0 = closed, 1 = open) and which can be turned to binary (e.g. 011101)
+and with a system, base-2 binary can be turned to base-10 integers from base-2 with a system (e.g. 110 = 6) and this can
+be turned to text using ASCII system (e.g. 65 = "A") and with colored lightbulbs acting as pixels. With the logic gates
+that can manipulate data by making specific data from 2 like AND, OR or XOR. So you can create, manipulate and display
+data. But what if electricity didn't exist? I will now make circuits out of only wooden blocks and the power of gravity.
+
+Normal vs Non-Electrical Basic Circuit
+
+A normal electrical circuit is like this:
+
+ /----o--o-----\
+ !             X
+ \------B------/
+
+I used ASCII art to make the circuit be displayed by text.
+Here's the meaning:
+/-\         = Wires, the ropes transferring electricity
+!           = Battery, electricity maker
+o--o o/ o   = Drawbridge, can be opened or closed to make electricity pass.
+B           = Buzzer, buzzes if connected to electricity from 2 sides.
+X           = Lightbulb, lights if connected to electricity from 2 sides.
+Here's the same circuit with the drawbridge opened.
+
+ /----o/ o-----\
+ !             X
+ \------B------/
+
+or
+
+ /----o \o-----\
+ !             X
+ \------B------/
+
+Here's a simpler circuit:
+
+ /-\
+ ! X
+ \-/
+
+The same thing without any electricity, only wood blocks and gravity on a 2D plain:
+
+-------
+-- ----
+* ^   -
+\--   -
+----&--
+
+To explain, the symbols mean this:
++ = Non-stationary block that has friction, so doesn't move in flat blocks.
+* = Non-stationary block that doesn't have friction, so it moves in flat blocks got there with energy.
+- = Stationary block, can't even move
+% = Stationary block that makes +'s traveling on it a *
+\ = Right slope block, which makes +'s and *'s on it go right
+/ = Left slope block, which makes +'s and *'s on it go left
+^ or v = Blocks that can be moved by the circuit user up/down
+< or > = Blocks that can be moved by the circuit user left/right
+& = Output box, which the user can count the number of blocks in it after the execution.
+    You can have as much as output boxes as you wish, but it'd make the circuit user to count it hard.
+
+I have added these not quite realistic "springs" to make +'s and *'s travel on the grid more easily.
+
+I = Sideways spring, reverses the direction of the boxes that touch them and automatically sends them 1 unit at that
+    direction
+_ = Upward spring, makes boxes touch it go up by 3 units
+Note that /'s and \'s can ascend +'s and *'s for the "easy grid travel" reason.
+
+This is its working process:
+1. A "*" gets pushed right by a "\".
+2. It stops if the "v" isn't pushed up.
+3. Else, it falls to the "&".
+4. If the "v" is pushed, "&" outputs "1"; else, "0".
+
+So, we can make a 1-bit lightbulb and button emulator.
+This is called a "buffer" logic gate which means it prints 1 or 0 according to the input.
+Here's it but simpler:
+
++--
+> -
+&--
+
+And it works like this:
+1. A "+" falls to the "&" if the ">" is pushed right.
+2. If the ">" is pushed, "&" outputs "1"; else, "0".
+
+Now, we will make the logic gates:
+Here's the NOT gate which reverses the buffer gate, e.g. 0 = 1, 1 = 0
+
+-+-
+> -
+-&-
+
+This works by:
+1. A "+" falls to the "&" if the ">" isn't pushed right.
+2. If the ">" is pushed, "&" outputs "0"; else, "1".
+
+An OR gate outputs 1 if at least 1 of the 2 given outputs is true.
+
++--+---
+> -> --
+      -
+\\\\\ -
+-----&-
+
+The working process is complicated.
+1. 2 "+"'s go to the buffer gate, but fall to a right slope instead of "&".
+2. After they move and fall, they fall to the "&".
+So, the logic table would be like this:
+00 = 0
+10 = 1
+01 = 1
+11 = 2
+The "2" wasn't intended, but at least 2 and 1 both mean "true" and 0 means "false" in Boolean logic.
+
+The AND gate outputs 1 only if both of the given inputs are 1.
+That gate is very easy:
+
++--
+> -
+> -
+&--
+
+The logic is this:
+1. A "+" falls to a "&" only if 2 ">"s get pushed.
+That's it.
+The XOR gate which outputs 1 if only 1 of the given outputs are 1.
+Theoretically, it's possible to make with this circuit as an evidence:
+ A--\
+/ B |
+|/ \|
+|| ||
+| \ \\
+| | | \
+| | | |
+N N | |
+| | | |
+AND AND
+ |   |
+NOT NOT
+ |   |
+  \ /
+  AND
+   |
+   X
+Note: A and B are buttons as XOR input and N = NOT.
+
+NAND, NOR and XNOR gates give the opposite output of AND, OR and XOR gates.
+The XAND gate gives the XNOR output, and XNAND gives XAND's opposite output.
+A Turing machine is a machine that can calculate anything, and it's theoretically possible to make using nothing but
+some wooden blocks and gravity! In fact, it can be simulated with the NAND and NOR gates.
+
+Now, I will make an addition calculator:
+
+----------------------
+                     -
++^+^+^+^+^+^+^+^+^+^ -
+\\\\\\\\\\\\\\\\\\\\ -
+                     -
++^+^+^+^+^+^+^+^+^+^ -
+\\\\\\\\\\\\\\\\\\\\&-
+
+A 1-bit memory:
+
+------------
+-          I
+- -------- -
+- -     I  -
+- -       _-
+-*--       -
+-> -    -  I
+- --     _ -
+-> -       -
+-          -
+-\\\\\\\\\_-
