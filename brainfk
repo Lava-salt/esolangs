@@ -1,0 +1,19 @@
+I made my modified version of BrainF**k esolang.
++ Increment the value of the current cell
+- Decrement the value of the current cell
+> Move pointer to the right
+< Move pointer to the left
+. Print the Unicode character of the current cell
+, Take user input (store in the current cell)
+[ Jump past matching } if the current cell is 0
+] Jump back to matching { if the current cell is not 0
+; Print the raw value of the current cell (instead of Unicode)
+# Set the current cell to zero
+@ Duplicate the value of the current cell to the next cell
+& Swap the current cell with the previous cell
+% Multiply the current cell by 2
+$ Divide the current cell by 2 (integer division)
+^ Move the pointer to the first nonzero cell
+~ Move the pointer to the last nonzero cell
+( Push the current cell’s value onto a stack
+) Pop the last value from the stack into the current cell
