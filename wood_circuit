@@ -174,3 +174,135 @@ A 1-bit memory:
 -> -       -
 -          -
 -\\\\\\\\\_-
+
+Here's the complete logic gate list in wood circuits:
+
+1. Buffer
+
++--
+> -
+&--
+
+2. Not
+
+-+-
+> -
+&--
+
+3. Or
+
+-+--+-
+> -> -
+- -- -
+-    -
+-\\\&-
+
+4. And
+
++--
+> -
+> -
+&--
+
+5. Xor
+
+-+--+-+--+--
+> -> -> -> -
+- -- - -- --
+-    -     -
+-\\\ --\\\ -
+*          &
+\-----------
+
+6. Xand
+
+-+--+-+--+--+- <- Please modify the circuit that the time this "+" takes to fall is way longer than
+> -> -> -> - -
+- -- - -- -- -
+-    -     - -
+-\\\ --\\\ - &
+*            - <- The time this "*" takes to get to the right.
+\-------------
+
+This could be manually done but it'd make the circuit less readable
+
+7. Nor
+
+-+-
+> -
+> -
+-&-
+
+8. Nand
+
++--+--
+> -> -
+ -- --
+     -
+-\\\&-
+
+9. Xnor
+
+-+--+-+--+--+-
+> -> -> -> - -
+- -- - -- -- -
+-    -     - -
+-\\\ --\\\ - &
+*            -
+\-------------
+The note for XAND is same for this.
+
+10. Xnand
+
+-+--+-+--+--
+> -> -> -> -
+- -- - -- --
+-    -     -
+-\\\ --\\\ -
+*          &
+\-----------
+
+Note: XOR was made with this setup:
+
+A  B
+|\/|
+|/\|
+||||
+| \\\
+| | \\
+| | | \
+| | | |
+OR  NAND
+ |   |
+  \ /
+  AND
+   |
+   X
+
+Note: XAND means this:
+
+A   B
+ \ /
+ XOR
+  |
+ NOT
+  |
+  X
+
+With this logic, an SR-Latch can be made:
+
+ R   S
+ |   |/-\
+NOT  OR |
+  \ /  \|
+  AND--+/
+       |
+       X
+
+An SR Latch has a "Set" and a "Reset" button. Set button makes the output 1, and reset makes 0.
+Here's the truth table:
+
+R=0 S=0 = Nothing Changes
+R=1 S=0 = 0
+R=0 S=1 = 1
+R=1 S=1 = Nothing Changes
