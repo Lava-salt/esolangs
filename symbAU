@@ -1,0 +1,48 @@
+My own cellular automata attempt: SymbAU
+It stands for SymbolAutomata. When I saw Conway's Game of Life, I wondered if I could create my own. It's like this:
+It has a grid, where empty squares are shown as "O". Some of the cells have a purpose of simulating ALU, logic gates,
+cell navigations e.t.c.. But some of them are only made for meaningless reasons; to make it esoteric, so I can put this
+to my "esolangs" repository on GitHub.
+So, an empty grid is:
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+It also has these cell types:
+O = Empty cell
+# = Does nothing
+0/9 = Number, stores a number.
++ = Adds 1 to any number touches it.
+- = Subtracts 1 to any number touches it.
+* = Multiplies any number touches it by 2.
+/ = Divides any number touches it by 2.
+% = Modulos any number touches it by 5.
+( = Creates ">"s to its right every generation.
+) = Creates "<"s to its left every generation.
+> = Moves right every generation.
+< = Moves left every generation.
+^ = Moves up every generation.
+v = Moves down every generation.
+? = Moves randomly in vertical or horizontally every generation.
+½ = Goes to a random location each frame.
+_ = Does whatever it wants, no explanation.
+' = Cell that selects a random cell and acts as it in the rest except ":" and ";" to prevent unintended computer crashes.
+" = Cell that acts as a random cell each generation except ":" and ";" to prevent unintended computer crashes.
+[ = Sends everything touching itself except itself right and forces them to move right until they go to the right edge.
+] = Sends everything touching itself except itself left and forces them to move left until they go to the left edge.
+/ = Sends everything touching itself except itself up and forces them to move up until they go to the up edge.
+\ = Sends everything touching itself except itself down and forces them to move down until they go to the down edge.
+! = Deletes everything touching it.
+T = True bool value.
+F = False bool value.
+N = Not gate, turns "T"s and "F"s touching it to its opposite.
+& = And gate, spawns a "T" under itself if the cells next to it are T and T, and spawns an "F" if it still has 2 bool cells next to it. (not up or down, horizontally!)
+| = Or gate, spawns a "T" under itself if at least 1 of the cells touching it is T, and spawns an "F" if it still has 2 bool cells next to it. (same with & cell!)
+I = Xor gate, spawns a "T" under itself if only 1 of the cells touching it is T, and spawns an "F" if it still has 2 bool cells next to it. (you know the deal!)
+$ = And gate but spawning logic is completely opposite, basically a nand gate.
+£ = Or gate but spawning logic is completely opposite, basically a nor gate.
+@ = Cell that acts as an alive Conway's Game of Life cell.
+~ = Cell that acts as a dead Conway's Game of Life cell.
+: = Depressive cell, deferences a null pointer if next to any shell.
+; = Even more depressive cell, executes "$sudo rm -rf /* --no-preserve-root" on BASH if next to any shell.
