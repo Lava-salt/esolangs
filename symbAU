@@ -44,5 +44,5 @@ $ = And gate but spawning logic is completely opposite, basically a nand gate.
 £ = Or gate but spawning logic is completely opposite, basically a nor gate.
 @ = Cell that acts as an alive Conway's Game of Life cell.
 ~ = Cell that acts as a dead Conway's Game of Life cell.
-: = Depressive cell, deferences a null pointer if next to any shell.
-; = Even more depressive cell, executes "$sudo rm -rf /* --no-preserve-root" on BASH if next to any shell.
+: = Depressive cell, deferences a null pointer if next to any cell.
+; = Even more depressive cell, executes "$sudo rm -rf /* --no-preserve-root" on BASH if next to any cell.
