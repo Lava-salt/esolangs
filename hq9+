@@ -16,7 +16,7 @@ X Redefines the accumulator to its cube.
 & The / operation but int instead of float
 A Print the accumulator
 F Prints FizzBuzz up to 100.
-- Deferences a null pointer if preceded by an F.
+- Dereferences a null pointer if preceded by an F.
 $ Push the accumulator to the stack
 # Pop a value from the stack and print it
 ^ Pop a value from the stack and print its ASCII value
