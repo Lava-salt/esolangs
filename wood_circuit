@@ -175,6 +175,16 @@ A 1-bit memory:
 -          -
 -\\\\\\\\\_-
 
+A simpler one:
+
+------
+-   I-
+-    I
+-*-_ -
+-> - -
+-    -
+-\--_-
+
 Here's the complete logic gate list in wood circuits:
 
 1. Buffer
@@ -187,7 +197,7 @@ Here's the complete logic gate list in wood circuits:
 
 -+-
 > -
-&--
+-&-
 
 3. Or
 
