@@ -1,0 +1,27 @@
+Syntax of my own version of DeadFish:
+
+i Increment the accumulator by 1
+d Decrement the accumulator by 1
+s Multiply the accumulator by itself
+o Display the accumulator as integer
+ö Display the accumulator as integer without newline
+h Halt
+x Quit shell
+I Begin statement def
+D Set accumulator to 0
+S End statement def
+O Display accumulator as Unicode character
+Ö Display accumulator as Unicode character without newline
+H Define statement name
+? Print statement name
+! Print statement function
+Statement definitions:
+    I Hv ii S vvv o h
+    Here, a statement's defined with I.
+    Its name is selected "v" using the H operator.
+    Its role is "ii", meaning it increments the accumulator by 2.
+    Its definition is finished with S.
+    It's used 3 times as "vvv".
+    So when printed with o, it'll output "6" (3*2).
+    Then, program's halted with "h".
+WARNING: Statements can't be nested in this IDE.
