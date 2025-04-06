@@ -24,7 +24,7 @@ halt
 The "please" keyword's needed to be put in front of another at least
 1 time and at most 10 times. If more than 10, the program will output
 "CODE IS OVERLY POLITE"
-Here's an introduction:
+Finally, it's not case-sensitive. Here's an introduction:
 
     === COMMENTS ===
 
