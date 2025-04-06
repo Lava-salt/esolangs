@@ -41,6 +41,7 @@ Multi-line comment!
 /* And the final way *\
 halt
 ===
+
     === MOVING THE POINTER ===
 
 The pointer can be moved by these 2 commands:
@@ -83,6 +84,7 @@ To push/pop or get data from a stack, use these:
 "set stack" = Sets the cell at the pointer the top value of the stack.
 
     === QUEUE MANAGEMENT ===
+
 The queue is almost the same as the stack, so memorizing the commands
 is much simpler.
 "push queue" = Appends the cell at the pointer to the top of queue.
@@ -226,6 +228,27 @@ Truth Machine (returns 0 if input's 0, returns 11111... if input's 1):
 9 print int
 10 goto 9
 11 halt
+
+Fibonacci Sequence:
+1 please start
+2 var x = 0
+3 var y = 0
+4 inc 1
+5 print int
+6 print int
+7 var z = x + y
+8 set z
+9 print int
+10 x = y
+11 y = z
+12 goto 7
+13 halt
+
+ASCII Art Drawing Space:
+1 please start
+2 input ascii
+3 goto 2
+4 halt
 
 Turing Machine:
 Theoretically, it can be simulated with only the NAND logic gate,
