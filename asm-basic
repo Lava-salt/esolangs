@@ -5,7 +5,6 @@ computers. This is ASM-BASIC's documentation:
 
     === DATA STRUCTURE ===
 
-                                                                .
 In ASM-BASIC, data is made from 256  cells that can store 32-bit
 data. There's a pointer that starts at cell #1, and there's 3 additional
 data storage: a stack that can store 16-bit data (and 64 values),
