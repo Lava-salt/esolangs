@@ -14,3 +14,4 @@ It also has a pointer.
 71 - 80  Input a number and store it in the cell at the pointer
 81 - 90	 Jump past the matching 91-100 if the cell at the pointer is 0
 91 - 100 Jump back to the matching 81-90 if the cell at the pointer is nonzero
+Basically a Brainf**k derivative.
